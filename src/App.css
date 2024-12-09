@@ -1,38 +1,111 @@
-/* Override week header */
-.MuiDayCalendar-weekDayLabel {
-  font-size: 14px;
-  width: 36px; /* Adjust width for alignment */
-  text-align: center;
-  color: #000; /* Optional: Set the text color */
+/* Overall layout */
+.date-range-picker {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: fit-content;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Manually replace labels */
-.MuiDayCalendar-weekDayLabel:nth-child(1)::after {
-  content: "Su";
-}
-.MuiDayCalendar-weekDayLabel:nth-child(2)::after {
-  content: "Mo";
-}
-.MuiDayCalendar-weekDayLabel:nth-child(3)::after {
-  content: "Tu";
-}
-.MuiDayCalendar-weekDayLabel:nth-child(4)::after {
-  content: "We";
-}
-.MuiDayCalendar-weekDayLabel:nth-child(5)::after {
-  content: "Th";
-}
-.MuiDayCalendar-weekDayLabel:nth-child(6)::after {
-  content: "Fr";
-}
-.MuiDayCalendar-weekDayLabel:nth-child(7)::after {
-  content: "Sa";
+.sidebar {
+  padding: 16px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #f9f9f9;
 }
 
-/* Hide default content */
-.MuiDayCalendar-weekDayLabel {
-  visibility: hidden;
+.sidebar-option {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
 }
-.MuiDayCalendar-weekDayLabel::after {
-  visibility: visible;
+
+.sidebar-option:hover {
+  background-color: #eef2ff;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+/* Custom Header Styles */
+.custom-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.prev-button,
+.next-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2563eb;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  color: #004aad;
+}
+
+.month-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 16px;
+  color: #333;
+}
+
+/* Calendar Styles */
+.rdrCalendarWrapper {
+  width: 600px;
+}
+
+.rdrMonth {
+  padding: 16px;
+}
+
+.rdrDay {
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rdrDayToday .rdrDayNumber span {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.rdrDaySelected {
+  background-color: #2563eb !important;
+  border-radius: 50%;
+  color: #fff !important;
+}
+
+.rdrDefinedRangesWrapper {
+  display: none; /* Hide default range presets */
+}
+.rdrDateDisplayWrapper{
+  display: none;
+}
+.rdrMonthAndYearWrapper{
+  display: none;
+}
+.rdrMonthName{
+  display: none;
 }
