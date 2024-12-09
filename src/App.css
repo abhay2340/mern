@@ -1,0 +1,38 @@
+/* Override week header */
+.MuiDayCalendar-weekDayLabel {
+  font-size: 14px;
+  width: 36px; /* Adjust width for alignment */
+  text-align: center;
+  color: #000; /* Optional: Set the text color */
+}
+
+/* Manually replace labels */
+.MuiDayCalendar-weekDayLabel:nth-child(1)::after {
+  content: "Su";
+}
+.MuiDayCalendar-weekDayLabel:nth-child(2)::after {
+  content: "Mo";
+}
+.MuiDayCalendar-weekDayLabel:nth-child(3)::after {
+  content: "Tu";
+}
+.MuiDayCalendar-weekDayLabel:nth-child(4)::after {
+  content: "We";
+}
+.MuiDayCalendar-weekDayLabel:nth-child(5)::after {
+  content: "Th";
+}
+.MuiDayCalendar-weekDayLabel:nth-child(6)::after {
+  content: "Fr";
+}
+.MuiDayCalendar-weekDayLabel:nth-child(7)::after {
+  content: "Sa";
+}
+
+/* Hide default content */
+.MuiDayCalendar-weekDayLabel {
+  visibility: hidden;
+}
+.MuiDayCalendar-weekDayLabel::after {
+  visibility: visible;
+}
