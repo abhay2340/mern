@@ -104,7 +104,7 @@ const DateRangePickerComponent = () => {
       width="fit-content"
     >
       {/* Sidebar */}
-      <Box
+      {/* <Box
         padding="16px"
         borderRight="1px solid #ccc"
         display="flex"
@@ -130,7 +130,7 @@ const DateRangePickerComponent = () => {
             </Button>
           )
         )}
-      </Box>
+      </Box> */}
 
       {/* Calendar Container */}
       <Box
@@ -170,9 +170,12 @@ const DateRangePickerComponent = () => {
           "& .rdrDateDisplayWrapper": {
       display: "none",
     },
-    "& .rdrDefinedRangesWrapper": {
+    "& .rdrInputRanges":{
       display: "none",
     },
+    // "& .rdrDefinedRangesWrapper": {
+    //   display: "none",
+    // },
     "& .rdrMonthAndYearWrapper": {
       display: "flex", // Make it visible
       alignItems: "center",
@@ -220,7 +223,7 @@ const DateRangePickerComponent = () => {
 
       >
         {/* Custom Header */}
-        <Box
+        {/* <Box
           display="flex"
           justifyContent="space-evenly"
           alignItems="center"
@@ -284,9 +287,38 @@ const DateRangePickerComponent = () => {
           >
             ❯
           </Button>
-        </Box>
+        </Box> */}
 
         {/* Date Range Picker */}
+        <Box sx={{
+"& .rdrNextButton":{
+  background:'inherit',
+}
+,
+"& .rdrPprevButton":{
+  background:'inherit',
+}
+,
+"& .rdrNextButton i": {
+
+    height: "10px", // Height of the Chevron
+    aspectRatio: "5 / 5", // Maintains width-to-height ratio
+    clipPath: "polygon(35% 0, 100% 50%, 35% 100%, 6% 100%, 73% 51%, 8% 0)",
+    backgroundColor: "black",
+    cursor: "pointer",
+},
+"& .rdrPprevButton i": {
+
+    height: "10px", // Height of the Chevron
+    aspectRatio: "5 / 5", // Maintains width-to-height ratio
+    clipPath: "polygon(35% 0, 100% 50%, 35% 100%, 6% 100%, 73% 51%, 8% 0)",
+    backgroundColor: "black",
+    rotate:'180deg',
+    cursor: "pointer",
+},
+
+
+        }}>
         <DateRangePicker
           ranges={range}
           onChange={(item) => setRange([item.selection])}
@@ -295,13 +327,17 @@ const DateRangePickerComponent = () => {
           showMonthAndYearPickers={false}
           rangeColors={["#2563eb"]}
           shownDate={currentMonth}
+        
           onShownDateChange={(date) => {
             console.log("xoxox",date);
             
-            setCurrentMonth(date)}} // Updates the month when user manually navigates
+            // setCurrentMonth(date)
+            }
+            } 
            
      
         />
+        </Box>
       </Box>
     </Box>
   );
